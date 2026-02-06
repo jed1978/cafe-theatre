@@ -68,12 +68,20 @@
       <a class="text-sm font-medium hover:text-primary transition-colors" href="#faq">常見問題</a>
     </div>
 
-    <button class="relative flex items-center gap-2 group" id="navCart">
-      <span class="text-sm font-bold group-hover:text-primary transition-colors">已選 <span id="cartCount">0</span> 件</span>
-      <div class="bg-primary text-white p-2 rounded-full hover:bg-primary-dark transition-colors">
-        <span class="material-symbols-outlined text-sm">shopping_bag</span>
-      </div>
-    </button>
+    <div class="flex items-center gap-4">
+      <!-- 版型切換按鈕 -->
+      <a href="index-noir.html" class="hidden md:flex items-center gap-2 px-3 py-1 border border-text-main/20 rounded hover:bg-text-main/5 transition-colors text-text-main text-xs font-bold tracking-wider">
+        <span class="material-symbols-outlined text-sm">dark_mode</span>
+        <span>Noir版</span>
+      </a>
+
+      <button class="relative flex items-center gap-2 group" id="navCart">
+        <span class="text-sm font-bold group-hover:text-primary transition-colors">已選 <span id="cartCount">0</span> 件</span>
+        <div class="bg-primary text-white p-2 rounded-full hover:bg-primary-dark transition-colors">
+          <span class="material-symbols-outlined text-sm">shopping_bag</span>
+        </div>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -119,12 +127,6 @@
       <div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-75 group-hover:scale-90 transition-transform duration-700"></div>
       <img alt="咖啡小劇場精品咖啡豆" class="relative w-full max-w-md object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500 rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsVEKDHwQytPx8XmZkTaI1lrw60djqujaPWMf63r2fzgKqPNRbBhnogrXKIVV0mB545PUpOcw5HAiib9f6d_hi6RrH4sssGpZqE91Nbl4LiC6SrPTohiukBLmW_wJPiS8deHV4GoHqmYUE3d-iap_BtRrqLMjSEZUODBtNwDf6vE0u3lLYGCAgLN4cdOVGTOt56jOWGl7PIBiJj43SzD7uODbS75XFbiTwDSi0dkU-_sZTnSEqN-THRemZsiNySL3Efhn0Oda7r9o-"/>
     </div>
-  </div>
-
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 flex flex-col items-center gap-2 animate-bounce">
-    <span class="text-xs uppercase tracking-widest">向下探索</span>
-    <span class="material-symbols-outlined">keyboard_arrow_down</span>
   </div>
 </section>
 

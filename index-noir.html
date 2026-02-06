@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="zh-TW">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>咖啡小劇場 | 黑色獨白</title>
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Staatliches&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Theme Configuration -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "noir-black": "#0a0a0c",
+            "shadow-grey": "#1e1e24",
+            "detective-blue": "#161b22",
+            "clue-amber": "#ffbf00",
+            "blood-red": "#8b0000",
+            "typewriter-white": "#d1d5db",
+          },
+          fontFamily: {
+            "headline": ["Staatliches", "Noto Sans TC", "sans-serif"],
+            "typewriter": ["Special Elite", "Noto Serif TC", "serif"],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .vignette-overlay {
+        background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
+      }
+      .film-grain {
+        background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+        pointer-events: none;
+      }
+      .spotlight {
+        background: radial-gradient(circle at center, rgba(255, 191, 0, 0.15) 0%, transparent 70%);
+      }
+      .case-folder {
+        box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.3);
+      }
+    }
+    body {
+      background-color: #0a0a0c;
+    }
+  </style>
+</head>
+
+<body class="font-typewriter text-typewriter-white overflow-x-hidden selection:bg-blood-red selection:text-white">
+
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-noir-black/90 backdrop-blur-md border-b border-white/5" id="nav">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-3 group cursor-pointer">
+      <span class="material-symbols-outlined text-blood-red text-3xl">fingerprint</span>
+      <span class="font-headline text-2xl tracking-widest text-white">咖啡小劇場</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8 font-headline text-lg tracking-wider text-gray-500">
+      <a class="hover:text-blood-red transition-colors" href="#story">犯罪現場</a>
+      <a class="hover:text-blood-red transition-colors" href="#products">嫌疑人</a>
+      <a class="hover:text-blood-red transition-colors" href="#order">證據</a>
+      <a class="hover:text-blood-red transition-colors" href="#faq">案件檔案</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <!-- 版型切換按鈕 -->
+      <a href="index.html" class="hidden md:flex items-center gap-2 px-3 py-1 border border-clue-amber/30 rounded hover:bg-clue-amber/10 transition-colors text-clue-amber text-xs font-bold tracking-widest">
+        <span class="material-symbols-outlined text-sm">wb_sunny</span>
+        <span>明亮版</span>
+      </a>
+
+      <button class="flex items-center gap-2 group" id="navCart">
+        <span class="font-headline text-lg text-white">案件記錄 (<span id="cartCount">0</span>)</span>
+        <span class="material-symbols-outlined text-blood-red">folder_open</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen w-full flex items-center justify-center bg-noir-black overflow-hidden pt-16" id="hero">
+  <div class="absolute inset-0 film-grain opacity-20 z-10"></div>
+  <div class="absolute inset-0 vignette-overlay z-20"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] spotlight rounded-full opacity-50"></div>
+
+  <div class="relative z-30 container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6">
+      <div class="inline-block bg-blood-red/20 border border-blood-red px-3 py-1 text-xs uppercase tracking-[0.3em] text-blood-red font-bold">
+        機密：檔案 #8821
+      </div>
+
+      <h1 class="font-headline text-7xl md:text-9xl text-white leading-tight">
+        黑色<br/>
+        <span class="text-blood-red">獨白</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg max-w-md leading-relaxed border-l-2 border-shadow-grey pl-6 italic">
+        「蒸氣如鬼魂般在晨光中升起。黑暗、沉重，帶著只有烘焙師知道的秘密。有人將要坦白。」
+      </p>
+
+      <div class="pt-8 flex flex-col sm:flex-row gap-4">
+        <a href="#products" class="bg-blood-red hover:bg-red-900 text-white font-headline text-xl px-10 py-4 transition-all uppercase tracking-widest shadow-lg flex items-center justify-center gap-2">
+          <span>審問烘焙</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="#story" class="border border-gray-700 hover:border-clue-amber text-gray-400 hover:text-clue-amber px-10 py-4 font-headline text-xl transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+          <span>檢視證據</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative group flex justify-center">
+      <div class="absolute inset-0 bg-clue-amber/5 blur-[120px] rounded-full"></div>
+      <div class="relative">
+        <img alt="咖啡小劇場精品咖啡豆" class="max-w-md grayscale contrast-125 brightness-75 drop-shadow-[0_35px_35px_rgba(0,0,0,0.8)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsVEKDHwQytPx8XmZkTaI1lrw60djqujaPWMf63r2fzgKqPNRbBhnogrXKIVV0mB545PUpOcw5HAiib9f6d_hi6RrH4sssGpZqE91Nbl4LiC6SrPTohiukBLmW_wJPiS8deHV4GoHqmYUE3d-iap_BtRrqLMjSEZUODBtNwDf6vE0u3lLYGCAgLN4cdOVGTOt56jOWGl7PIBiJj43SzD7uODbS75XFbiTwDSi0dkU-_sZTnSEqN-THRemZsiNySL3Efhn0Oda7r9o-"/>
+        <div class="absolute bottom-4 -left-4 bg-white p-2 shadow-lg -rotate-3 border-2 border-gray-300">
+          <div class="bg-gray-100 p-4 text-noir-black text-xs font-bold border-b border-gray-300 mb-2">證據標籤</div>
+          <p class="text-[10px] text-noir-black leading-none">ID: 物證 A</p>
+          <p class="text-[10px] text-noir-black leading-none uppercase mt-1">狀態: 已沒收</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 品牌故事區 -->
+<section class="py-24 bg-detective-blue relative border-y border-white/5" id="story">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="flex flex-col md:flex-row items-start justify-between mb-20 gap-8">
+      <div class="md:w-1/2">
+        <h2 class="font-headline text-5xl text-white mb-4 uppercase tracking-tighter">犯罪現場: <span class="text-clue-amber">咖啡產地</span></h2>
+        <div class="w-20 h-1 bg-blood-red mb-6"></div>
+        <p class="text-gray-400 leading-relaxed italic">海拔很高，霧很濃。每顆豆子都是火山土壤和烈日的見證者。我們在海拔 2,000 公尺處找到了真相。</p>
+      </div>
+      <div class="bg-noir-black/50 p-6 border border-white/10 max-w-xs case-folder">
+        <p class="text-[10px] text-clue-amber mb-2 uppercase tracking-widest font-bold">調查筆記</p>
+        <p class="text-xs text-gray-500 leading-relaxed">主體在脅迫下採收。自然處理法。現場檢測到冷血的酸度。</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="group relative bg-shadow-grey p-8 border border-white/5 hover:border-clue-amber/30 transition-all">
+        <span class="absolute top-4 right-4 text-[10px] text-gray-600 font-bold">檔案: 01-環境</span>
+        <span class="material-symbols-outlined text-clue-amber mb-6 text-4xl opacity-50">landscape</span>
+        <h3 class="font-headline text-2xl text-white mb-4 tracking-wider">高海拔掩護</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">豆子在衣索比亞高地的陰影中成長。一個培養複雜柑橘動機的完美藏身處。</p>
+      </div>
+
+      <div class="group relative bg-shadow-grey p-8 border border-white/5 hover:border-clue-amber/30 transition-all">
+        <span class="absolute top-4 right-4 text-[10px] text-gray-600 font-bold">檔案: 02-甄選</span>
+        <span class="material-symbols-outlined text-clue-amber mb-6 text-4xl opacity-50">person_check</span>
+        <h3 class="font-headline text-2xl text-white mb-4 tracking-wider">嫌疑人列表</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">我們圍捕了收穫中的前 1%。只有那些能夠承受選拔台高溫的才被留下審問。</p>
+      </div>
+
+      <div class="group relative bg-shadow-grey p-8 border border-white/5 hover:border-clue-amber/30 transition-all">
+        <span class="absolute top-4 right-4 text-[10px] text-gray-600 font-bold">檔案: 03-排練</span>
+        <span class="material-symbols-outlined text-clue-amber mb-6 text-4xl opacity-50">local_fire_department</span>
+        <h3 class="font-headline text-2xl text-white mb-4 tracking-wider">第三級拷問</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">我們把它們放進烘焙桶，加大火力。小批次。慢慢折磨。直到豆子終於開裂，吐出油脂。</p>
+      </div>
+    </div>
+
+    <div class="mt-16 grayscale sepia-[.2] contrast-125 brightness-50 border-4 border-noir-black relative h-80">
+      <img alt="咖啡豆在農場曝曬" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRYHPOq6tQ9Kz9DJXvTju90mwWaD1tAa9ITqfi7GcG4912fIL1ZajKvEfuyNDNVtmxbLWrcdDQMwuASulS8DY6wtDfxyLpjFRCNbwCBEXZyqKy0A8CBhfw-MrrtBWrucoEzHGcS8sxwh9YBOLDbqlQkRRYHxlH8-SuhU9-b_VhgbudVndiVZAgxdu86f8sbCE7Ax-Qes8eHqw0MycLe8mZ-8k6YW2aO4r_0322AfJCD92OHGrpF379NMRCvonFtH7z7dNRLhkm0ckI"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-noir-black to-transparent"></div>
+      <div class="absolute bottom-6 right-6 font-headline text-xl text-white bg-blood-red px-4 py-1">監視照片 #12</div>
+    </div>
+  </div>
+</section>
+
+<!-- 商品展示區 -->
+<section class="py-24 bg-noir-black" id="products">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-20">
+      <h2 class="font-headline text-6xl text-white uppercase tracking-tighter">嫌疑人陣容</h2>
+      <p class="text-clue-amber tracking-[0.4em] text-sm mt-4">選擇你的罪犯</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12" id="productsGrid">
+      <!-- 商品將由 JS 動態渲染 -->
+    </div>
+  </div>
+</section>
+
+<!-- 訂購流程說明 -->
+<section class="py-24 bg-detective-blue" id="order-process">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter">調查程序</h2>
+      <p class="text-gray-400 mt-4 italic">如何帶走你的證據</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
+        <span class="material-symbols-outlined text-clue-amber text-5xl mb-6 opacity-50">fingerprint</span>
+        <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">選擇嫌疑人</h3>
+        <p class="text-gray-400 text-sm">從陣容中挑選目標</p>
+      </div>
+
+      <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
+        <span class="material-symbols-outlined text-clue-amber text-5xl mb-6 opacity-50">description</span>
+        <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">填寫報告</h3>
+        <p class="text-gray-400 text-sm">完成案件資料</p>
+      </div>
+
+      <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
+        <span class="material-symbols-outlined text-clue-amber text-5xl mb-6 opacity-50">storefront</span>
+        <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">7-11 取證</h3>
+        <p class="text-gray-400 text-sm">到現場取得證物</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 訂購表單區 -->
+<section class="py-24 bg-noir-black" id="order">
+  <div class="container mx-auto px-6 max-w-2xl">
+    <div class="text-center mb-12">
+      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter mb-4">建立案件檔案</h2>
+      <p class="text-gray-400">請填寫以下資訊完成調查</p>
+    </div>
+
+    <form class="space-y-6" id="orderForm">
+      <div>
+        <label class="block text-sm font-headline tracking-wider text-white mb-2" for="name">調查員姓名 *</label>
+        <input class="w-full px-4 py-3 bg-shadow-grey border border-white/10 text-white rounded focus:border-clue-amber focus:ring-2 focus:ring-clue-amber/20 outline-none transition-all" id="name" name="name" required type="text"/>
+      </div>
+
+      <div>
+        <label class="block text-sm font-headline tracking-wider text-white mb-2" for="phone">聯絡電話 *</label>
+        <input class="w-full px-4 py-3 bg-shadow-grey border border-white/10 text-white rounded focus:border-clue-amber focus:ring-2 focus:ring-clue-amber/20 outline-none transition-all" id="phone" name="phone" placeholder="0912345678" required type="tel"/>
+      </div>
+
+      <div>
+        <label class="block text-sm font-headline tracking-wider text-white mb-2" for="email">Email</label>
+        <input class="w-full px-4 py-3 bg-shadow-grey border border-white/10 text-white rounded focus:border-clue-amber focus:ring-2 focus:ring-clue-amber/20 outline-none transition-all" id="email" name="email" placeholder="detective@agency.com" type="email"/>
+      </div>
+
+      <div>
+        <label class="block text-sm font-headline tracking-wider text-white mb-2" for="store">7-11 取證地點 *</label>
+        <input class="w-full px-4 py-3 bg-shadow-grey border border-white/10 text-white rounded focus:border-clue-amber focus:ring-2 focus:ring-clue-amber/20 outline-none transition-all" id="store" name="store" placeholder="例：台北市中正區重慶門市" required type="text"/>
+      </div>
+
+      <div>
+        <label class="block text-sm font-headline tracking-wider text-white mb-2">已沒收證物 *</label>
+        <div class="bg-shadow-grey border border-white/10 rounded p-4 min-h-[100px]" id="selectedProducts">
+          <p class="text-gray-400 text-sm">請先選擇嫌疑人</p>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-headline tracking-wider text-white mb-2" for="note">案件備註</label>
+        <textarea class="w-full px-4 py-3 bg-shadow-grey border border-white/10 text-white rounded focus:border-clue-amber focus:ring-2 focus:ring-clue-amber/20 outline-none transition-all" id="note" name="note" placeholder="特殊線索或額外資訊..." rows="3"></textarea>
+      </div>
+
+      <div class="border-t border-b border-white/10 py-4 flex justify-between items-center">
+        <span class="font-headline tracking-wider text-white">案件總價：</span>
+        <strong class="text-3xl text-clue-amber font-headline" id="totalAmount">NT$ 0</strong>
+      </div>
+
+      <button class="w-full bg-blood-red hover:bg-red-900 text-white py-4 font-headline text-xl transition-all uppercase tracking-widest shadow-lg flex items-center justify-center gap-2" id="submitBtn" type="submit">
+        <span>結案存檔</span>
+        <span class="material-symbols-outlined">check_circle</span>
+      </button>
+    </form>
+
+    <!-- 成功訊息 -->
+    <div class="hidden mt-8 p-8 bg-shadow-grey border-2 border-blood-red rounded text-center" id="formSuccess">
+      <div class="text-6xl mb-4">🎯</div>
+      <h3 class="text-2xl font-headline text-blood-red mb-2 tracking-wider">案件已歸檔！</h3>
+      <p class="text-gray-400">我們將盡快處理您的調查。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ 常見問題區 -->
+<section class="py-24 bg-detective-blue" id="faq">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter">案件檔案</h2>
+      <p class="text-gray-400 mt-4">常見調查問題</p>
+    </div>
+
+    <div class="space-y-4" id="faqList">
+      <!-- FAQ 將由 JS 動態渲染 -->
+    </div>
+  </div>
+</section>
+
+<!-- 顧客評價區 -->
+<section class="py-24 bg-noir-black" id="testimonials">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter">證人證詞</h2>
+      <p class="text-clue-amber tracking-[0.4em] text-sm mt-4">真實口供</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="testimonialsGrid">
+      <!-- 評價將由 JS 動態渲染 -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-noir-black text-white pt-20 pb-10 border-t border-blood-red/30">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-12">
+      <div class="text-center md:text-left">
+        <h2 class="font-headline text-5xl mb-2 text-white">最終謝幕</h2>
+        <p class="text-gray-500 italic">訂閱晨間快報。我們只寄送重要消息。</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/5 mb-12">
+      <div class="space-y-4">
+        <h4 class="font-headline text-xl text-blood-red tracking-widest">檔案</h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a class="hover:text-clue-amber" href="#products">完整目錄</a></li>
+          <li><a class="hover:text-clue-amber" href="#story">案件背景</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-headline text-xl text-blood-red tracking-widest">機構</h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a class="hover:text-clue-amber" href="#story">我們的不在場證明</a></li>
+          <li><a class="hover:text-clue-amber" href="#">烘焙室</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-headline text-xl text-blood-red tracking-widest">支援</h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a class="hover:text-clue-amber" href="#faq">提出報告</a></li>
+          <li><a class="hover:text-clue-amber" href="#order">調度記錄</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="font-headline text-xl text-blood-red tracking-widest">信號</h4>
+        <div class="flex gap-6">
+          <a class="text-gray-500 hover:text-white transition-colors" href="https://instagram.com" target="_blank">
+            <span class="material-symbols-outlined">radio</span>
+          </a>
+          <a class="text-gray-500 hover:text-white transition-colors" href="https://line.me" target="_blank">
+            <span class="material-symbols-outlined">camera</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center text-[10px] text-gray-700 tracking-[0.3em] pt-8 border-t border-white/5">
+      <p>&copy; 2025 咖啡小劇場調查局 ALL CASES CONFIDENTIAL</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 商品詳情 Modal -->
+<div class="fixed inset-0 bg-noir-black/95 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="productModal">
+  <div class="bg-shadow-grey border border-white/10 rounded max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
+    <button class="absolute top-4 right-4 w-10 h-10 bg-noir-black hover:bg-blood-red rounded flex items-center justify-center transition-colors text-white" id="modalClose">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="p-8" id="modalBody">
+      <!-- 商品詳情將由 JS 動態填充 -->
+    </div>
+  </div>
+</div>
+
+<!-- 購物車側邊欄 -->
+<aside class="fixed top-0 right-0 h-full w-full md:w-96 bg-shadow-grey shadow-2xl z-50 transform translate-x-full transition-transform duration-300 border-l border-white/10" id="cartSidebar">
+  <div class="flex flex-col h-full">
+    <div class="border-b border-white/10 p-6 flex justify-between items-center">
+      <h3 class="font-headline text-xl text-white tracking-wider">案件記錄</h3>
+      <button class="w-10 h-10 bg-noir-black hover:bg-blood-red rounded flex items-center justify-center transition-colors text-white" id="cartSidebarClose">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-6" id="cartSidebarBody">
+      <p class="text-gray-400 text-center py-8">尚無沒收證物</p>
+    </div>
+
+    <div class="border-t border-white/10 p-6 space-y-4">
+      <div class="flex justify-between items-center">
+        <span class="font-headline tracking-wider text-white">總計：</span>
+        <strong class="text-2xl text-clue-amber font-headline" id="cartTotal">NT$ 0</strong>
+      </div>
+      <a class="block w-full bg-blood-red hover:bg-red-900 text-white py-3 rounded font-headline text-center transition-colors tracking-wider" href="#order" id="goToOrder">建立檔案</a>
+    </div>
+  </div>
+</aside>
+
+<!-- JavaScript Modules -->
+<script type="module" src="js/main-noir.js"></script>
+
+</body>
+</html>
