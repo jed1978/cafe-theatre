@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="咖啡小劇場 - 每一杯,都是一場獨白" />
+    <title>咖啡小劇場 | 精品咖啡豆</title>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- CSS 載入順序很重要 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav" data-scrolled="false">
+      <div class="container nav__container">
+        <a href="#hero" class="nav__logo">咖啡小劇場</a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#story">品牌故事</a></li>
+          <li><a href="#products">本季劇目</a></li>
+          <li><a href="#order">訂購</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <button class="nav__cart" id="navCart" aria-label="購物車">
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <button class="nav__hamburger" id="navHamburger" aria-label="選單">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Section 1: Hero 主視覺區 -->
+    <section class="section hero" id="hero">
+      <div class="hero__spotlight"></div>
+      <h1 class="hero__title">咖啡小劇場</h1>
+      <p class="hero__subtitle">每一杯，都是一場獨白</p>
+      <a href="#story" class="hero__scroll-hint" aria-label="向下滾動">
+        <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 5v14M19 12l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Section 2: 品牌故事區 -->
+    <section class="section story" id="story">
+      <div class="container">
+        <div class="story__content">
+          <div class="story__text">
+            <h2 class="story__title">品牌理念</h2>
+            <!-- REPLACE: 品牌故事內容 -->
+            <p>在這個快節奏的時代，我們相信每一杯咖啡都應該是一場值得品味的演出。咖啡小劇場不只是販售咖啡豆，更是邀請你參與一場感官的劇場體驗。</p>
+            <p>我們精選來自世界各地的優質咖啡豆，每一款都有自己的故事與個性。從淺焙的花香果酸，到深焙的醇厚濃郁，每種風味都是一段獨特的敘事。</p>
+            <p>讓咖啡成為你生活中的主角，而非配角。在這裡，每個人都是品味生活的觀眾，也是創造故事的演員。</p>
+          </div>
+          <div class="story__image">
+            <!-- REPLACE: 實際圖片 -->
+            <div class="placeholder-image">
+              <span>品牌意象圖片</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 商品展示區 -->
+    <section class="section products" id="products">
+      <div class="container">
+        <h2 class="products__title">本季劇目</h2>
+        <p class="products__subtitle">每一款咖啡，都是一場精心編排的演出</p>
+        <div class="products__grid" id="productsGrid">
+          <!-- 商品卡片將由 JS 動態渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 訂購流程說明區 -->
+    <section class="section order-process" id="order-process">
+      <div class="container">
+        <h2 class="order-process__title">如何帶走你的故事</h2>
+        <div class="order-process__steps">
+          <div class="step">
+            <div class="step__icon">🎭</div>
+            <h3 class="step__title">選擇你的劇目</h3>
+            <p class="step__desc">挑選心儀的咖啡豆</p>
+          </div>
+          <div class="step__line"></div>
+          <div class="step">
+            <div class="step__icon">📝</div>
+            <h3 class="step__title">填寫觀眾資訊</h3>
+            <p class="step__desc">完成訂購表單</p>
+          </div>
+          <div class="step__line"></div>
+          <div class="step">
+            <div class="step__icon">🏪</div>
+            <h3 class="step__title">7-11 取件付款</h3>
+            <p class="step__desc">到店取貨，輕鬆付款</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 訂購表單區 -->
+    <section class="section order-form" id="order">
+      <div class="container">
+        <h2 class="order-form__title">預約你的座位</h2>
+        <form class="form" id="orderForm">
+          <div class="form__group">
+            <label for="name" class="form__label">姓名 *</label>
+            <input type="text" id="name" name="name" class="form__input" required />
+            <span class="form__error" id="nameError"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="phone" class="form__label">手機號碼 *</label>
+            <input type="tel" id="phone" name="phone" class="form__input" placeholder="0912345678" required />
+            <span class="form__error" id="phoneError"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input type="email" id="email" name="email" class="form__input" placeholder="your@email.com" />
+            <span class="form__error" id="emailError"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="store" class="form__label">7-11 取貨門市 *</label>
+            <input type="text" id="store" name="store" class="form__input" placeholder="例：台北市中正區重慶門市" required />
+            <span class="form__error" id="storeError"></span>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label">選購商品 *</label>
+            <div id="selectedProducts" class="selected-products">
+              <!-- 已選商品將由 JS 動態渲染 -->
+              <p class="form__hint">請先點選商品加入選購</p>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label for="note" class="form__label">備註</label>
+            <textarea id="note" name="note" class="form__textarea" rows="3" placeholder="特殊需求或想對我們說的話..."></textarea>
+          </div>
+
+          <div class="form__total">
+            <span>訂單總金額：</span>
+            <strong id="totalAmount">NT$ 0</strong>
+          </div>
+
+          <button type="submit" class="btn btn--primary" id="submitBtn">
+            確認訂購
+          </button>
+        </form>
+
+        <!-- 成功訊息（初始隱藏）-->
+        <div class="form__success" id="formSuccess" style="display: none;">
+          <div class="success__icon">🎉</div>
+          <h3>您的座位已保留！</h3>
+          <p>我們將盡快為您安排演出。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: FAQ 常見問題區 -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <h2 class="faq__title">幕後花絮</h2>
+        <div class="faq__list" id="faqList">
+          <!-- FAQ 項目將由 JS 動態渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: 顧客評價區 -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="testimonials__title">觀眾迴響</h2>
+        <div class="testimonials__grid" id="testimonialsGrid">
+          <!-- 評價將由 JS 動態渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Instagram / 社群連結區 -->
+    <section class="section social" id="social">
+      <div class="container">
+        <h2 class="social__title">追蹤我們的日常</h2>
+        <div class="social__grid" id="socialGrid">
+          <!-- Instagram grid 將由 JS 動態渲染 -->
+          <!-- REPLACE: 實際 Instagram 圖片 -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social__item">
+            <div class="placeholder-image"><span>IG 1</span></div>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social__item">
+            <div class="placeholder-image"><span>IG 2</span></div>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social__item">
+            <div class="placeholder-image"><span>IG 3</span></div>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social__item">
+            <div class="placeholder-image"><span>IG 4</span></div>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social__item">
+            <div class="placeholder-image"><span>IG 5</span></div>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social__item">
+            <div class="placeholder-image"><span>IG 6</span></div>
+          </a>
+        </div>
+
+        <div class="social__links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social__link" aria-label="Instagram">
+            <!-- REPLACE: Instagram icon -->
+            <span>Instagram</span>
+          </a>
+          <a href="https://line.me" target="_blank" rel="noopener noreferrer" class="social__link" aria-label="LINE">
+            <!-- REPLACE: LINE icon -->
+            <span>LINE</span>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social__link" aria-label="Facebook">
+            <!-- REPLACE: Facebook icon -->
+            <span>Facebook</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Footer -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <h3 class="footer__logo">咖啡小劇場</h3>
+            <p class="footer__tagline">每一杯，都是一場獨白</p>
+          </div>
+
+          <div class="footer__contact">
+            <h4>聯絡資訊</h4>
+            <p>Email: <a href="mailto:hello@cafe-theatre.com">hello@cafe-theatre.com</a></p>
+            <p>LINE: <a href="https://line.me" target="_blank" rel="noopener noreferrer">@cafetheatre</a></p>
+            <p>電話: 02-1234-5678</p>
+          </div>
+
+          <div class="footer__social">
+            <h4>追蹤我們</h4>
+            <div class="footer__social-links">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+              <a href="https://line.me" target="_blank" rel="noopener noreferrer" aria-label="LINE">LINE</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2025 咖啡小劇場 All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Section 4: 商品詳情 Modal -->
+    <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__overlay" id="modalOverlay"></div>
+      <div class="modal__content">
+        <button class="modal__close" id="modalClose" aria-label="關閉">✕</button>
+        <div class="modal__body" id="modalBody">
+          <!-- 商品詳情將由 JS 動態填充 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 購物車側邊欄 -->
+    <aside class="cart-sidebar" id="cartSidebar" data-open="false">
+      <div class="cart-sidebar__header">
+        <h3>已選購商品</h3>
+        <button class="cart-sidebar__close" id="cartSidebarClose" aria-label="關閉">✕</button>
+      </div>
+      <div class="cart-sidebar__body" id="cartSidebarBody">
+        <!-- 購物車內容將由 JS 動態渲染 -->
+        <p class="cart-empty">尚未選購任何商品</p>
+      </div>
+      <div class="cart-sidebar__footer">
+        <div class="cart-total">
+          <span>總計：</span>
+          <strong id="cartTotal">NT$ 0</strong>
+        </div>
+        <a href="#order" class="btn btn--primary" id="goToOrder">前往訂購</a>
+      </div>
+    </aside>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
