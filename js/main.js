@@ -14,6 +14,9 @@ import { initForm } from "./form.js";
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🎭 咖啡小劇場 - 初始化中...");
 
+  // 標記 JavaScript 已載入，啟用動畫
+  document.body.classList.add("js-enabled");
+
   // 初始化各模組
   initNavigation();
   initProducts();
