@@ -1,0 +1,62 @@
+/* 設計系統變數 - 咖啡小劇場 */
+
+:root {
+  /* ===== 色彩計畫 ===== */
+  --primary-black: #0a0a0a; /* 主背景 - 深邃舞台 */
+  --primary-white: #f5f5f0; /* 主文字 - 聚光燈下的白 */
+  --accent-gray: #2a2a2a; /* 卡片/區塊背景 */
+  --mid-gray: #888888; /* 次要文字 */
+  --highlight: #ffffff; /* 強調元素 - 純白聚光 */
+  --subtle-warm: #c8b8a2; /* 點綴色 - 咖啡溫度 */
+  --divider: #333333; /* 分隔線 */
+
+  /* ===== 字體系統 ===== */
+  --font-display: "Playfair Display", "Noto Serif TC", serif;
+  --font-body: "Inter", "Noto Sans TC", sans-serif;
+
+  /* 流體字級 (使用 clamp) */
+  --font-size-h1: clamp(3rem, 8vw, 6rem); /* 48-96px */
+  --font-size-h2: clamp(2rem, 5vw, 3.5rem); /* 32-56px */
+  --font-size-h3: clamp(1.5rem, 3vw, 2rem); /* 24-32px */
+  --font-size-body: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+  --font-size-small: clamp(0.875rem, 1.5vw, 1rem); /* 14-16px */
+
+  /* 字重 */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* ===== 間距系統 (8px base) ===== */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 2rem; /* 32px */
+  --space-lg: 4rem; /* 64px */
+  --space-xl: 8rem; /* 128px */
+  --space-2xl: 12rem; /* 192px */
+
+  /* ===== 過渡動畫 ===== */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ===== 邊框與陰影 ===== */
+  --border-thin: 1px solid var(--divider);
+  --border-highlight: 2px solid var(--highlight);
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-strong: 0 8px 32px rgba(255, 255, 255, 0.1);
+
+  /* ===== Z-index 層級 ===== */
+  --z-nav: 1000;
+  --z-modal: 2000;
+  --z-overlay: 1900;
+
+  /* ===== 聚光燈效果變數（動態更新）===== */
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+
+  /* ===== 響應式斷點（僅供 JS 參考）===== */
+  --breakpoint-mobile: 768px;
+  --breakpoint-desktop: 1024px;
+}
