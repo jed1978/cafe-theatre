@@ -1,0 +1,585 @@
+/* Stitch 風格主題 - 現代明亮劇場美學 */
+
+/* ===== 覆蓋色彩系統 ===== */
+:root {
+  /* Stitch 色彩方案 */
+  --primary-red: #ea2a33;
+  --primary-red-dark: #b91c23;
+  --primary-red-light: #ff4d56;
+
+  --bg-light: #fdfbf7; /* 奶油白 - 劇本紙張 */
+  --bg-dark: #1a1616; /* 深炭黑 */
+  --bg-medium: #2a2222; /* 中度炭灰 */
+
+  --spotlight-gold: #f4e4bc; /* 聚光燈金 */
+  --text-main: #211111; /* 主文字 */
+  --text-muted: #886364; /* 次要文字 */
+  --border-light: #f4f0f0; /* 淺邊框 */
+  --border-fine: #e5dcdc; /* 精緻邊框 */
+
+  /* 覆蓋原有變數 */
+  --primary-black: var(--bg-dark);
+  --primary-white: var(--bg-light);
+  --gold-primary: var(--primary-red);
+  --accent-gray: #f8f5f1;
+}
+
+/* ===== 全域背景改為淺色 ===== */
+body {
+  background: var(--bg-light) !important;
+  color: var(--text-main) !important;
+}
+
+body::before {
+  display: none; /* 移除深色背景紋理 */
+}
+
+/* ===== 導覽列 - 淺色玻璃態 ===== */
+.nav {
+  background: rgba(253, 251, 247, 0.9) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+.nav[data-scrolled="true"] {
+  background: rgba(253, 251, 247, 0.95) !important;
+  box-shadow: 0 4px 24px rgba(33, 17, 17, 0.06) !important;
+}
+
+.nav__logo {
+  color: var(--text-main) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--text-main) !important;
+  font-family: var(--font-display);
+}
+
+.nav__links a {
+  color: var(--text-main) !important;
+  font-weight: 500;
+}
+
+.nav__links a::after {
+  background: var(--primary-red) !important;
+}
+
+.nav__links a:hover {
+  color: var(--primary-red) !important;
+}
+
+.nav__cart {
+  background: var(--primary-red) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+}
+
+.nav__cart:hover {
+  background: var(--primary-red-dark) !important;
+  box-shadow: 0 4px 16px rgba(234, 42, 51, 0.3) !important;
+}
+
+.cart-count {
+  color: white !important;
+}
+
+/* ===== Hero 區 - 深色劇場舞台 ===== */
+.hero {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-dark) 0%,
+    #221a1a 100%
+  ) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 聚光燈效果 - 紅色徑向漸層 */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(234, 42, 51, 0.2) 0%,
+    rgba(26, 22, 22, 0) 70%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 幕簾裝飾 - 左右黑色漸變 */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 8%),
+    linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, transparent 8%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero__title {
+  font-family: var(--font-display) !important;
+  color: white !important;
+  background: none !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 20;
+}
+
+/* "Opening" 紅色斜體效果 */
+.hero__title::after {
+  content: "小劇場";
+  display: block;
+  color: var(--primary-red);
+  font-style: italic;
+  margin-top: 0.2em;
+}
+
+.hero__subtitle {
+  color: #9ca3af !important;
+  font-weight: 300 !important;
+  position: relative;
+  z-index: 20;
+}
+
+/* Now Showing 標籤 */
+.hero__subtitle::before {
+  content: "Now Showing";
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(234, 42, 51, 0.8);
+  margin-bottom: 2rem;
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero__scroll-hint {
+  color: var(--primary-red) !important;
+  z-index: 20;
+}
+
+.scroll-arrow {
+  stroke: var(--primary-red) !important;
+}
+
+/* ===== 淺色區塊樣式 ===== */
+.story,
+.order-process,
+.faq,
+.testimonials,
+.social {
+  background: var(--bg-light) !important;
+  color: var(--text-main) !important;
+}
+
+.story__title,
+.order-process__title,
+.faq__title,
+.testimonials__title,
+.social__title {
+  color: var(--text-main) !important;
+}
+
+.story__title::after,
+.order-process__title::after,
+.faq__title::after,
+.testimonials__title::after,
+.social__title::after {
+  background: linear-gradient(90deg, var(--primary-red), transparent) !important;
+}
+
+.story__text {
+  background: white !important;
+  border: 1px solid var(--border-fine) !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 2px 8px rgba(33, 17, 17, 0.06) !important;
+}
+
+.story__text::before {
+  background: var(--primary-red) !important;
+}
+
+.story__text p {
+  color: var(--text-muted) !important;
+}
+
+/* ===== 商品區 - 深色背景 ===== */
+.products {
+  background: var(--bg-dark) !important;
+  padding: var(--space-2xl) var(--space-md);
+}
+
+.products__title {
+  color: white !important;
+}
+
+.products__subtitle {
+  color: #9ca3af !important;
+}
+
+/* 商品卡片 - 白色卡片 */
+.product-card {
+  background: white !important;
+  border: 1px solid var(--border-fine) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-card::before {
+  display: none;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(234, 42, 51, 0.15) !important;
+  border-color: var(--primary-red) !important;
+}
+
+.product-card__series {
+  color: var(--primary-red) !important;
+}
+
+.product-card__name {
+  color: var(--text-main) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--text-main) !important;
+}
+
+.product-card__flavor {
+  color: var(--text-muted) !important;
+}
+
+.product-card__price {
+  color: var(--text-main) !important;
+  font-weight: 700;
+}
+
+.product-card__image {
+  background: #f8f5f1 !important;
+  border-bottom: 1px solid var(--border-fine);
+}
+
+/* ===== 步驟卡片 ===== */
+.step {
+  background: white !important;
+  border: 1px solid var(--border-fine) !important;
+  box-shadow: 0 2px 8px rgba(33, 17, 17, 0.06) !important;
+}
+
+.step:hover {
+  background: white !important;
+  border-color: var(--primary-red) !important;
+  box-shadow: 0 8px 24px rgba(234, 42, 51, 0.12) !important;
+}
+
+.step__title {
+  color: var(--text-main) !important;
+}
+
+.step__desc {
+  color: var(--text-muted) !important;
+}
+
+.step__line {
+  background: var(--border-fine) !important;
+}
+
+/* ===== FAQ ===== */
+.faq-item {
+  background: white;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-fine) !important;
+  border-radius: 0.5rem;
+}
+
+.faq-item:hover {
+  background: #fafafa !important;
+}
+
+.faq-item__question {
+  color: var(--text-main) !important;
+}
+
+.faq-item.is-open .faq-item__question,
+.faq-item__question:hover {
+  color: var(--primary-red) !important;
+}
+
+.faq-item__icon {
+  color: var(--primary-red) !important;
+}
+
+.faq-item__answer-content {
+  color: var(--text-muted) !important;
+}
+
+/* ===== 評價卡片 ===== */
+.testimonial-card {
+  background: white !important;
+  border: 1px solid var(--border-fine) !important;
+  border-left: 3px solid var(--primary-red) !important;
+  box-shadow: 0 2px 8px rgba(33, 17, 17, 0.06) !important;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 8px 24px rgba(234, 42, 51, 0.12) !important;
+}
+
+.testimonial-card__quote {
+  color: var(--primary-red) !important;
+}
+
+.testimonial-card__text {
+  color: var(--text-muted) !important;
+}
+
+.testimonial-card__author {
+  color: var(--text-main) !important;
+  font-weight: 700;
+}
+
+.testimonial-card__rating {
+  color: var(--primary-red) !important;
+}
+
+/* ===== Modal ===== */
+.modal__overlay {
+  background: rgba(253, 251, 247, 0.95) !important;
+}
+
+.modal__content {
+  background: white !important;
+  border: 1px solid var(--border-fine) !important;
+  box-shadow: 0 24px 80px rgba(33, 17, 17, 0.15) !important;
+}
+
+.product-detail__name {
+  color: var(--text-main) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--text-main) !important;
+}
+
+.product-detail__series {
+  color: var(--primary-red) !important;
+}
+
+.product-detail__section h4 {
+  color: var(--primary-red) !important;
+}
+
+.product-detail__flavor,
+.product-detail__description {
+  color: var(--text-muted) !important;
+}
+
+.product-detail__image {
+  background: #f8f5f1 !important;
+}
+
+/* ===== 表單 ===== */
+.form__label {
+  color: var(--text-main) !important;
+  font-weight: 600;
+}
+
+.form__input,
+.form__textarea {
+  background: white !important;
+  border: 1px solid var(--border-fine) !important;
+  color: var(--text-main) !important;
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  border-color: var(--primary-red) !important;
+  box-shadow: 0 0 0 3px rgba(234, 42, 51, 0.1) !important;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.selected-products {
+  background: #f8f5f1 !important;
+  border: 1px solid var(--border-fine) !important;
+}
+
+/* 紅色主按鈕 */
+.btn--primary {
+  background: var(--primary-red) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(234, 42, 51, 0.25) !important;
+}
+
+.btn--primary:hover {
+  background: var(--primary-red-dark) !important;
+  box-shadow: 0 8px 24px rgba(234, 42, 51, 0.35) !important;
+}
+
+/* ===== Footer - 深色 ===== */
+.footer {
+  background: var(--bg-dark) !important;
+  color: #9ca3af !important;
+  border-top: 1px solid #2a2222 !important;
+}
+
+.footer::before {
+  display: none;
+}
+
+.footer__logo {
+  color: white !important;
+}
+
+.footer__contact h4,
+.footer__social h4 {
+  color: white !important;
+}
+
+.footer__contact p {
+  color: #9ca3af !important;
+}
+
+.footer__contact a {
+  color: var(--primary-red) !important;
+}
+
+.footer__social-links a {
+  border-color: #2a2222 !important;
+  color: #9ca3af !important;
+}
+
+.footer__social-links a:hover {
+  border-color: var(--primary-red) !important;
+  color: var(--primary-red) !important;
+  background: rgba(234, 42, 51, 0.1) !important;
+}
+
+.footer__bottom {
+  color: #6b7280 !important;
+  border-top: 1px solid #2a2222 !important;
+}
+
+/* ===== 購物車側邊欄 ===== */
+.cart-sidebar {
+  background: white !important;
+  border-left: 1px solid var(--border-fine) !important;
+}
+
+.cart-sidebar__header {
+  border-bottom: 1px solid var(--border-fine) !important;
+}
+
+.cart-sidebar__header h3 {
+  color: var(--text-main) !important;
+}
+
+.cart-sidebar__close {
+  color: var(--text-main) !important;
+}
+
+.cart-sidebar__close:hover {
+  background: #f8f5f1 !important;
+}
+
+.cart-empty {
+  color: var(--text-muted) !important;
+}
+
+.cart-item {
+  border: 1px solid var(--border-fine) !important;
+  background: white !important;
+}
+
+.cart-item__name {
+  color: var(--text-main) !important;
+}
+
+.cart-item__price {
+  color: var(--primary-red) !important;
+}
+
+.cart-total {
+  color: var(--text-main) !important;
+}
+
+/* ===== 滾動條 ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-red);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-red-dark);
+}
+
+/* ===== 選取文字 ===== */
+*::selection {
+  background: rgba(234, 42, 51, 0.2);
+  color: var(--text-main);
+}
+
+/* ===== 社群連結 ===== */
+.social__link {
+  border: 1px solid var(--border-fine) !important;
+  background: white !important;
+  color: var(--text-main) !important;
+}
+
+.social__link:hover {
+  border-color: var(--primary-red) !important;
+  background: var(--primary-red) !important;
+  color: white !important;
+}
+
+/* ===== 覆蓋金色相關樣式 ===== */
+.product-card__footer {
+  border-top: 1px solid var(--border-fine) !important;
+}
+
+.form__total {
+  border-top: 1px solid var(--border-fine) !important;
+  border-bottom: 1px solid var(--border-fine) !important;
+  color: var(--text-main) !important;
+}
+
+.cart-sidebar__footer {
+  border-top: 1px solid var(--border-fine) !important;
+}
+
+.form__success {
+  background: white !important;
+  border: 2px solid var(--primary-red) !important;
+}
+
+.form__success h3 {
+  color: var(--primary-red) !important;
+}
+
+.form__success p {
+  color: var(--text-muted) !important;
+}
