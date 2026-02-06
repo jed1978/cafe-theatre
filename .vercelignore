@@ -1,0 +1,19 @@
+# 備份檔案
+index-old.html
+js/main-old.js
+
+# 參考資料
+stitch/
+stitch-2/
+
+# Git
+.git/
+.gitignore
+
+# 文件
+docs/
+README.md
+
+# 開發檔案
+.DS_Store
+*.log
