@@ -1,25 +1,43 @@
 /* 設計系統變數 - 咖啡小劇場 */
 
 :root {
-  /* ===== 色彩計畫 ===== */
+  /* ===== 色彩計畫 - 現代劇場美學 ===== */
   --primary-black: #0a0a0a; /* 主背景 - 深邃舞台 */
-  --primary-white: #f5f5f0; /* 主文字 - 聚光燈下的白 */
-  --accent-gray: #2a2a2a; /* 卡片/區塊背景 */
-  --mid-gray: #888888; /* 次要文字 */
+  --stage-black: #141414; /* 舞台背景 - 層次深黑 */
+  --primary-white: #fafaf8; /* 主文字 - 聚光燈下的白 */
+  --accent-gray: #1a1a1a; /* 卡片/區塊背景 - 更深層次 */
+  --mid-gray: #999999; /* 次要文字 - 提高對比 */
   --highlight: #ffffff; /* 強調元素 - 純白聚光 */
-  --subtle-warm: #c8b8a2; /* 點綴色 - 咖啡溫度 */
-  --divider: #333333; /* 分隔線 */
 
-  /* ===== 字體系統 ===== */
-  --font-display: "Playfair Display", "Noto Serif TC", serif;
-  --font-body: "Inter", "Noto Sans TC", sans-serif;
+  /* 金色系統 - 劇場燈光 */
+  --gold-primary: #d4af37; /* 主金色 - 聚光燈 */
+  --gold-light: #f4d03f; /* 亮金色 - 高光 */
+  --gold-dark: #b8941e; /* 深金色 - 陰影 */
+  --warm-glow: rgba(212, 175, 55, 0.15); /* 金色光暈 */
 
-  /* 流體字級 (使用 clamp) */
-  --font-size-h1: clamp(3rem, 8vw, 6rem); /* 48-96px */
-  --font-size-h2: clamp(2rem, 5vw, 3.5rem); /* 32-56px */
-  --font-size-h3: clamp(1.5rem, 3vw, 2rem); /* 24-32px */
-  --font-size-body: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+  /* 咖啡色系 - 溫暖點綴 */
+  --coffee-light: #c8b8a2; /* 淺咖啡 - 拿鐵 */
+  --coffee-medium: #8b7355; /* 中咖啡 - 摩卡 */
+  --coffee-dark: #3e2723; /* 深咖啡 - 濃縮 */
+
+  /* 分隔與邊框 */
+  --divider: #2a2a2a; /* 分隔線 - 提高可見度 */
+  --divider-gold: rgba(212, 175, 55, 0.3); /* 金色分隔線 */
+  --frame-border: rgba(255, 255, 255, 0.08); /* 舞台框架 */
+
+  /* ===== 字體系統 - 現代劇場排版 ===== */
+  --font-display: "Cormorant Garamond", "Noto Serif TC", serif;
+  --font-accent: "Italiana", "Noto Serif TC", serif;
+  --font-body: "Montserrat", "Noto Sans TC", sans-serif;
+
+  /* 流體字級 - 更大膽的尺度對比 */
+  --font-size-hero: clamp(4rem, 12vw, 10rem); /* 超大標題 64-160px */
+  --font-size-h1: clamp(3.5rem, 9vw, 7rem); /* 56-112px */
+  --font-size-h2: clamp(2.5rem, 6vw, 4.5rem); /* 40-72px */
+  --font-size-h3: clamp(1.75rem, 4vw, 2.5rem); /* 28-40px */
+  --font-size-body: clamp(1.0625rem, 2vw, 1.25rem); /* 17-20px */
   --font-size-small: clamp(0.875rem, 1.5vw, 1rem); /* 14-16px */
+  --font-size-tiny: clamp(0.75rem, 1vw, 0.875rem); /* 12-14px */
 
   /* 字重 */
   --font-weight-light: 300;
@@ -35,17 +53,30 @@
   --space-xl: 8rem; /* 128px */
   --space-2xl: 12rem; /* 192px */
 
-  /* ===== 過渡動畫 ===== */
-  --transition-fast: 0.2s ease;
-  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* ===== 過渡動畫 - 劇場節奏 ===== */
+  --transition-instant: 0.1s ease;
+  --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+  --transition-luxurious: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-spring: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  /* ===== 邊框與陰影 ===== */
+  /* ===== 邊框與陰影 - 層次深度 ===== */
   --border-thin: 1px solid var(--divider);
-  --border-highlight: 2px solid var(--highlight);
-  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-strong: 0 8px 32px rgba(255, 255, 255, 0.1);
+  --border-gold: 1px solid var(--divider-gold);
+  --border-highlight: 2px solid var(--gold-primary);
+  --border-frame: 3px solid var(--frame-border);
+
+  /* 陰影系統 - 舞台深度 */
+  --shadow-subtle: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 4px 24px rgba(212, 175, 55, 0.2);
+  --glow-gold: 0 0 40px rgba(212, 175, 55, 0.3);
+  --glow-white: 0 0 60px rgba(255, 255, 255, 0.1);
+
+  /* 內陰影 - 凹陷效果 */
+  --inset-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
 
   /* ===== Z-index 層級 ===== */
   --z-nav: 1000;

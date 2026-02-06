@@ -100,7 +100,7 @@
   transition: all var(--transition-fast);
 }
 
-/* ===== Hero Section ===== */
+/* ===== Hero Section - 劇場舞台 ===== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -109,31 +109,113 @@
   align-items: center;
   text-align: center;
   position: relative;
-  background: radial-gradient(
-      circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 120% 80% at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+      rgba(212, 175, 55, 0.12) 0%,
+      rgba(212, 175, 55, 0.04) 30%,
+      transparent 60%
     ),
-    var(--primary-black);
+    radial-gradient(
+      circle at 50% 50%,
+      var(--stage-black) 0%,
+      var(--primary-black) 100%
+    );
+}
+
+/* 舞台框架裝飾 */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border: var(--border-frame);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.hero::before {
+  top: var(--space-xl);
+  left: var(--space-xl);
+  right: var(--space-xl);
+  bottom: var(--space-xl);
+  border-width: 2px 0 0 2px;
+}
+
+.hero::after {
+  top: var(--space-xl);
+  left: var(--space-xl);
+  right: var(--space-xl);
+  bottom: var(--space-xl);
+  border-width: 0 2px 2px 0;
 }
 
 .hero__spotlight {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
 }
 
 .hero__title {
-  margin-bottom: var(--space-sm);
-  letter-spacing: 0.05em;
+  font-family: var(--font-accent);
+  font-size: var(--font-size-hero);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-md);
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--primary-white) 0%,
+    var(--gold-light) 50%,
+    var(--primary-white) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 8s ease-in-out infinite;
+  text-shadow: 0 0 80px rgba(212, 175, 55, 0.3);
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .hero__subtitle {
   font-family: var(--font-display);
   font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-light);
-  color: var(--subtle-warm);
+  font-weight: 300;
+  color: var(--coffee-light);
   font-style: italic;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0 var(--space-lg);
+}
+
+/* 副標題裝飾線 */
+.hero__subtitle::before,
+.hero__subtitle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+}
+
+.hero__subtitle::before {
+  left: 0;
+}
+
+.hero__subtitle::after {
+  right: 0;
 }
 
 .hero__scroll-hint {
@@ -141,12 +223,24 @@
   bottom: var(--space-lg);
   left: 50%;
   transform: translateX(-50%);
-  color: var(--mid-gray);
+  color: var(--gold-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.hero__scroll-hint:hover {
+  opacity: 1;
 }
 
 .scroll-arrow {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  stroke: var(--gold-primary);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
 }
 
 /* ===== Brand Story Section ===== */

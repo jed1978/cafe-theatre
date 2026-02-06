@@ -1,18 +1,38 @@
-/* 全域基礎樣式 */
+/* 全域基礎樣式 - 現代劇場美學 */
 
-/* Google Fonts 載入 */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+/* Google Fonts 載入 - 精選劇場字體 */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Italiana&family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap");
 
 body {
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   color: var(--primary-white);
-  background-color: var(--primary-black);
+  background: linear-gradient(180deg, var(--primary-black) 0%, var(--stage-black) 100%);
   overflow-x: hidden;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* 標題樣式 */
+/* 背景紋理 - 舞台質感 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.008) 2px, rgba(255, 255, 255, 0.008) 4px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 標題樣式 - 劇場排版 */
 h1,
 h2,
 h3,
@@ -20,26 +40,35 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: var(--font-weight-bold);
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  position: relative;
 }
 
 h1 {
   font-size: var(--font-size-h1);
+  font-weight: 400;
+  letter-spacing: -0.03em;
 }
 
 h2 {
   font-size: var(--font-size-h2);
+  font-weight: 400;
+  letter-spacing: -0.025em;
 }
 
 h3 {
   font-size: var(--font-size-h3);
+  font-weight: 600;
 }
 
-/* 段落與小字 */
+/* 段落與小字 - 提升可讀性 */
 p {
-  line-height: 1.8;
+  line-height: 1.75;
   margin-bottom: var(--space-sm);
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 small {

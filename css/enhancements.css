@@ -1,0 +1,457 @@
+/* 設計提升 - 現代劇場美學增強 */
+
+/* ===== 通用提升：幾何裝飾元素 ===== */
+.section {
+  position: relative;
+  z-index: 1;
+}
+
+/* 區塊標題統一樣式 - 金色點綴 */
+.section h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-xl);
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-primary), transparent);
+}
+
+/* ===== 品牌故事區 - 舞台框架設計 ===== */
+.story {
+  padding: var(--space-2xl) var(--space-md);
+}
+
+.story__text {
+  position: relative;
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(20, 20, 20, 0.6));
+  border: 1px solid var(--divider-gold);
+  border-radius: 2px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.story__text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--gold-primary), transparent);
+}
+
+.story__text p {
+  color: rgba(250, 250, 248, 0.85);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.story__text p:first-of-type::first-letter {
+  font-size: 3.5em;
+  font-family: var(--font-accent);
+  float: left;
+  line-height: 0.85;
+  margin: 0.1em 0.15em 0 0;
+  color: var(--gold-primary);
+}
+
+.story__image {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: var(--shadow-strong), var(--shadow-gold);
+}
+
+.story__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(212, 175, 55, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== 商品卡片 - 劇場海報風格 ===== */
+.product-card {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(20, 20, 20, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: var(--shadow-strong), var(--shadow-gold);
+}
+
+.product-card__series {
+  font-family: var(--font-body);
+  font-size: var(--font-size-tiny);
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-xs);
+}
+
+.product-card__name {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(135deg, var(--primary-white), var(--coffee-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.product-card__image {
+  position: relative;
+  background: linear-gradient(135deg, rgba(40, 40, 40, 0.8), rgba(20, 20, 20, 0.9));
+}
+
+.product-card__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+.product-card__image img {
+  filter: brightness(0.9) contrast(1.1);
+  transition: all var(--transition-luxurious);
+}
+
+.product-card:hover .product-card__image img {
+  filter: brightness(1) contrast(1.2);
+  transform: scale(1.08);
+}
+
+.product-card__footer {
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding-top: var(--space-sm);
+}
+
+.product-card__price {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--gold-primary);
+  letter-spacing: 0.05em;
+}
+
+/* ===== 訂購流程 - 時間軸設計 ===== */
+.order-process {
+  padding: var(--space-2xl) var(--space-md);
+  position: relative;
+}
+
+.order-process__title {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.step {
+  position: relative;
+  padding: var(--space-lg);
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  transition: all var(--transition-smooth);
+}
+
+.step:hover {
+  background: rgba(26, 26, 26, 0.9);
+  border-color: rgba(212, 175, 55, 0.2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.step__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+  filter: grayscale(0.3);
+  transition: all var(--transition-smooth);
+}
+
+.step:hover .step__icon {
+  filter: grayscale(0) drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+  transform: scale(1.1);
+}
+
+.step__line {
+  background: linear-gradient(90deg, var(--divider), var(--gold-primary), var(--divider));
+  opacity: 0.4;
+}
+
+/* ===== FAQ - 優雅手風琴 ===== */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-smooth);
+}
+
+.faq-item:hover {
+  background: rgba(26, 26, 26, 0.3);
+}
+
+.faq-item__question {
+  padding: var(--space-md) var(--space-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.faq-item__question:hover {
+  color: var(--gold-primary);
+}
+
+.faq-item.is-open .faq-item__question {
+  color: var(--gold-primary);
+}
+
+.faq-item__icon {
+  color: var(--gold-primary);
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+/* ===== 評價卡片 - 引言設計 ===== */
+.testimonial-card {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(20, 20, 20, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--gold-primary);
+  padding: var(--space-lg);
+  transition: all var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-accent);
+  font-size: 3rem;
+  color: var(--gold-primary);
+  opacity: 0.3;
+  line-height: 0.8;
+  margin-bottom: var(--space-sm);
+}
+
+.testimonial-card__text {
+  font-size: 1.0625rem;
+  color: rgba(250, 250, 248, 0.9);
+  line-height: 1.7;
+  font-style: normal;
+}
+
+.testimonial-card__author {
+  font-weight: 600;
+  color: var(--gold-primary);
+  letter-spacing: 0.05em;
+}
+
+.testimonial-card__rating {
+  color: var(--gold-primary);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* ===== Modal - 劇場幕布效果 ===== */
+.modal__overlay {
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.modal__content {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(10, 10, 10, 0.95));
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8), var(--glow-gold);
+  max-width: 1000px;
+}
+
+.product-detail__name {
+  font-family: var(--font-accent);
+  background: linear-gradient(135deg, var(--primary-white), var(--gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.product-detail__section h4 {
+  color: var(--gold-primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* ===== 表單 - 精緻輸入 ===== */
+.form__input,
+.form__textarea {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all var(--transition-smooth);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  background: rgba(26, 26, 26, 0.95);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1), var(--shadow-gold);
+}
+
+.form__label {
+  color: var(--coffee-light);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary));
+  color: var(--primary-black);
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: var(--space-sm) var(--space-lg);
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition-smooth);
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold), var(--glow-gold);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+/* ===== Footer - 幕落 ===== */
+.footer {
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  background: linear-gradient(180deg, transparent, rgba(10, 10, 10, 0.8));
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.footer__logo {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  color: var(--gold-primary);
+}
+
+.footer a:hover {
+  color: var(--gold-light);
+}
+
+/* ===== 導覽列增強 ===== */
+.nav[data-scrolled="true"] {
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.nav__logo {
+  font-family: var(--font-accent);
+  background: linear-gradient(135deg, var(--primary-white), var(--gold-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all var(--transition-smooth);
+}
+
+.nav__logo:hover {
+  letter-spacing: 0.08em;
+}
+
+.nav__links a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.nav__links a::after {
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  height: 2px;
+}
+
+.nav__cart {
+  border-color: rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.05);
+  font-weight: 600;
+  transition: all var(--transition-smooth);
+}
+
+.nav__cart:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* ===== 微互動與細節 ===== */
+*::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: var(--primary-white);
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dark), var(--gold-primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
