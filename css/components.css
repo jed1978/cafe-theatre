@@ -1,0 +1,344 @@
+/* 元件樣式 - 可重用的 UI 元件 */
+
+/* ===== 按鈕 ===== */
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn--primary {
+  width: 100%;
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+  border: 2px solid var(--primary-white);
+}
+
+.btn--primary:hover {
+  background-color: transparent;
+  color: var(--primary-white);
+}
+
+.btn--primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--primary-white);
+  border: var(--border-thin);
+}
+
+.btn--secondary:hover {
+  border-color: var(--highlight);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== 商品卡片 ===== */
+.product-card {
+  background-color: var(--accent-gray);
+  border: var(--border-thin);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--highlight);
+}
+
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mid-gray);
+  font-size: var(--font-size-small);
+}
+
+.product-card__body {
+  padding: var(--space-sm);
+}
+
+.product-card__series {
+  font-size: var(--font-size-small);
+  color: var(--subtle-warm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.product-card__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-xs);
+}
+
+.product-card__flavor {
+  font-size: var(--font-size-small);
+  color: var(--mid-gray);
+  margin-bottom: var(--space-sm);
+}
+
+.product-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-sm);
+  border-top: var(--border-thin);
+}
+
+.product-card__price {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--highlight);
+}
+
+/* ===== Modal 內商品詳情 ===== */
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.product-detail__image {
+  aspect-ratio: 1;
+  background-color: var(--divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mid-gray);
+  border-radius: 4px;
+}
+
+.product-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.product-detail__series {
+  font-size: var(--font-size-small);
+  color: var(--subtle-warm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-detail__name {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.product-detail__section {
+  margin-bottom: var(--space-md);
+}
+
+.product-detail__section h4 {
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid-gray);
+  margin-bottom: var(--space-xs);
+}
+
+.product-detail__flavor {
+  color: var(--primary-white);
+}
+
+.product-detail__roast {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--divider);
+  border-radius: 4px;
+  font-size: var(--font-size-small);
+}
+
+.product-detail__description {
+  color: var(--mid-gray);
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 2px solid var(--divider);
+  padding-left: var(--space-sm);
+}
+
+.product-detail__price {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--highlight);
+  margin: var(--space-md) 0;
+}
+
+/* ===== 已選商品列表 ===== */
+.selected-product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  background-color: var(--divider);
+  border-radius: 4px;
+}
+
+.selected-product-item__name {
+  font-weight: var(--font-weight-medium);
+}
+
+.selected-product-item__price {
+  color: var(--subtle-warm);
+}
+
+/* ===== FAQ 項目 ===== */
+.faq-item {
+  border-bottom: var(--border-thin);
+}
+
+.faq-item__question {
+  width: 100%;
+  padding: var(--space-md) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-white);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.faq-item__question:hover {
+  color: var(--subtle-warm);
+}
+
+.faq-item__icon {
+  transition: transform var(--transition-fast);
+  font-size: 1.5rem;
+}
+
+.faq-item.is-open .faq-item__icon {
+  transform: rotate(45deg);
+}
+
+.faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-smooth);
+}
+
+.faq-item.is-open .faq-item__answer {
+  max-height: 500px;
+}
+
+.faq-item__answer-content {
+  padding-bottom: var(--space-md);
+  color: var(--mid-gray);
+  line-height: 1.8;
+}
+
+/* ===== 評價卡片 ===== */
+.testimonial-card {
+  background-color: var(--accent-gray);
+  border: var(--border-thin);
+  border-radius: 4px;
+  padding: var(--space-lg);
+}
+
+.testimonial-card__quote {
+  font-size: 2rem;
+  color: var(--subtle-warm);
+  margin-bottom: var(--space-sm);
+  line-height: 1;
+}
+
+.testimonial-card__text {
+  color: var(--mid-gray);
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-card__author {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-xs);
+}
+
+.testimonial-card__rating {
+  color: var(--subtle-warm);
+  font-size: var(--font-size-small);
+}
+
+/* ===== 購物車商品項目 ===== */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  border: var(--border-thin);
+  border-radius: 4px;
+}
+
+.cart-item__info {
+  flex: 1;
+}
+
+.cart-item__name {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-xs);
+}
+
+.cart-item__price {
+  font-size: var(--font-size-small);
+  color: var(--subtle-warm);
+}
+
+.cart-item__remove {
+  padding: var(--space-xs);
+  color: var(--mid-gray);
+  transition: color var(--transition-fast);
+}
+
+.cart-item__remove:hover {
+  color: #ff6b6b;
+}
+
+/* ===== Loading Spinner ===== */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-white);
+  animation: spin 0.8s linear infinite;
+}
+
+/* ===== 響應式調整 ===== */
+@media (max-width: 768px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card__name {
+    font-size: 1.25rem;
+  }
+
+  .testimonial-card {
+    padding: var(--space-md);
+  }
+}
