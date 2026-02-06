@@ -12,7 +12,7 @@ export const products = [
     roast: "淺焙",
     origin: "衣索比亞 耶加雪菲",
     price: 420,
-    image: "london.jpg", // REPLACE: 實際圖片路徑
+    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80", // 咖啡豆特寫 - 淺焙
     description:
       "經典永不落幕，如同西區的音樂劇。明亮的檸檬酸質與細緻的白花香氣交織，尾韻帶有優雅的佛手柑清香，是一場感官的盛宴。",
   },
@@ -24,7 +24,7 @@ export const products = [
     roast: "中焙",
     origin: "哥倫比亞 慧蘭",
     price: 360,
-    image: "broadway.jpg",
+    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80", // 咖啡豆與杯子
     description:
       "華麗而均衡，百老匯的黃金年代。甜美的焦糖香氣，搭配堅果的醇厚口感，黑巧克力的尾韻為整場演出畫下完美句點。",
   },
@@ -36,7 +36,7 @@ export const products = [
     roast: "中深焙",
     origin: "瓜地馬拉 安提瓜",
     price: 380,
-    image: "paris.jpg",
+    image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=80", // 深色咖啡豆
     description:
       "文人的咖啡館，存在主義的餘韻。莓果的酸甜與紅酒般的醇厚交融，細緻的煙燻香氣彷彿左岸咖啡館的時光。",
   },
@@ -48,7 +48,7 @@ export const products = [
     roast: "中焙",
     origin: "肯亞 AA",
     price: 360,
-    image: "shakespeare.jpg",
+    image: "https://images.unsplash.com/photo-1587734195503-904a22d6f7a5?w=800&q=80", // 咖啡豆與木勺
     description:
       "悲喜交織，層次豐富。如同莎翁筆下的劇作，黑醋栗的濃郁、葡萄柚的明亮、蜂蜜的甜美，每一口都是一段故事。",
   },
@@ -60,7 +60,7 @@ export const products = [
     roast: "中深焙",
     origin: "巴西 喜拉朵",
     price: 380,
-    image: "chekhov.jpg",
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80", // 咖啡與咖啡豆
     description:
       "日常的詩意，溫柔而深刻。榛果的溫潤、奶油的柔滑、可可的綿密，像契訶夫筆下那些細膩的生活切片。",
   },
@@ -72,7 +72,7 @@ export const products = [
     roast: "深焙",
     origin: "印尼 曼特寧",
     price: 380,
-    image: "beckett.jpg",
+    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80", // 深焙咖啡豆特寫
     description:
       "等待的藝術，濃郁而內斂。雪松的沉穩、香料的複雜、黑糖的甜蜜，如同貝克特的荒謬劇場，餘韻悠長。",
   },

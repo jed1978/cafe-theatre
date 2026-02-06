@@ -27,7 +27,7 @@ function renderProducts() {
       (product) => `
     <article class="product-card" data-id="${product.id}">
       <div class="product-card__image">
-        <span>商品圖片</span>
+        <img src="${product.image}" alt="${product.name}" loading="lazy" />
       </div>
       <div class="product-card__body">
         <div class="product-card__series">${product.series}</div>
@@ -155,7 +155,7 @@ function showProductModal(productId) {
   modalBody.innerHTML = `
     <div class="product-detail">
       <div class="product-detail__image">
-        <span>商品圖片</span>
+        <img src="${product.image}" alt="${product.name}" />
       </div>
       <div class="product-detail__info">
         <div class="product-detail__series">${product.series}</div>
