@@ -1,0 +1,96 @@
+/* 動畫定義 */
+
+/* ===== Keyframes ===== */
+
+/* 向下箭頭跳動 */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Loading spinner 旋轉 */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 淡入上移 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 脈衝效果 */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ===== 滾動動畫類別 ===== */
+
+/* 預設狀態：隱藏且下移 */
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 進入視窗後：顯示且歸位 */
+.section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero 區例外：始終可見 */
+.section.hero {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== 工具動畫類別 ===== */
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.pulse {
+  animation: pulse 2s ease infinite;
+}
+
+/* Hero scroll hint 動畫 */
+.hero__scroll-hint {
+  animation: bounce 2s infinite;
+}
+
+/* ===== Reduced Motion 支援 ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .section {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
