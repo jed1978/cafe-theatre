@@ -1,0 +1,46 @@
+# 備份檔案
+index-old.html
+js/main-old.js
+*-old.*
+
+# 參考資料
+stitch/
+stitch-2/
+
+# Claude 本地設定
+.claude/settings.local.json
+.claude/memory/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Node modules (如果之後有用到)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
