@@ -1,0 +1,107 @@
+/* 全域基礎樣式 */
+
+/* Google Fonts 載入 */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--primary-white);
+  background-color: var(--primary-black);
+  overflow-x: hidden;
+}
+
+/* 標題樣式 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+/* 段落與小字 */
+p {
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
+/* 連結 */
+a {
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--subtle-warm);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--highlight);
+  outline-offset: 4px;
+}
+
+/* 按鈕基礎樣式 */
+button {
+  transition: all var(--transition-fast);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--highlight);
+  outline-offset: 4px;
+}
+
+/* 圖片 */
+img {
+  height: auto;
+}
+
+/* 區塊通用樣式 */
+.section {
+  padding: var(--space-xl) var(--space-md);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* 視覺輔助 - 僅開發時使用 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
