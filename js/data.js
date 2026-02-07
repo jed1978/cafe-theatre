@@ -48,7 +48,7 @@ export const products = [
     roast: "中焙",
     origin: "肯亞 AA",
     price: 360,
-    image: "https://images.unsplash.com/photo-1587734195503-904a22d6f7a5?w=800&q=80", // 咖啡豆與木勺
+    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80", // 咖啡豆特寫
     description:
       "悲喜交織，層次豐富。如同莎翁筆下的劇作，黑醋栗的濃郁、葡萄柚的明亮、蜂蜜的甜美，每一口都是一段故事。",
   },
