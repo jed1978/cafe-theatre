@@ -102,33 +102,33 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="relative min-h-screen w-full flex items-center justify-center bg-noir-black overflow-hidden pt-16" id="hero">
-  <div class="absolute inset-0 film-grain opacity-20 z-10"></div>
-  <div class="absolute inset-0 vignette-overlay z-20"></div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] spotlight rounded-full opacity-50"></div>
+<section class="relative min-h-screen w-full flex items-center justify-center bg-noir-black overflow-x-hidden pt-16 py-12" id="hero">
+  <div class="absolute inset-0 film-grain opacity-20 z-10 pointer-events-none"></div>
+  <div class="absolute inset-0 vignette-overlay z-20 pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] spotlight rounded-full opacity-50 pointer-events-none"></div>
 
-  <div class="relative z-30 container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    <div class="space-y-6">
-      <div class="inline-block bg-blood-red/20 border border-blood-red px-3 py-1 text-xs uppercase tracking-[0.3em] text-blood-red font-bold">
+  <div class="relative z-30 container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center w-full">
+    <div class="space-y-6 w-full overflow-visible">
+      <div class="inline-block bg-blood-red/20 border border-blood-red px-3 py-1 text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-blood-red font-bold break-words">
         機密：檔案 #8821
       </div>
 
-      <h1 class="font-headline text-7xl md:text-9xl text-white leading-tight">
+      <h1 class="font-headline text-5xl sm:text-7xl md:text-9xl text-white leading-tight break-words">
         黑色<br/>
         <span class="text-blood-red">獨白</span>
       </h1>
 
-      <p class="text-gray-400 text-lg max-w-md leading-relaxed border-l-2 border-shadow-grey pl-6 italic">
+      <p class="text-gray-400 text-base sm:text-lg max-w-md leading-relaxed border-l-2 border-shadow-grey pl-4 sm:pl-6 italic break-words overflow-wrap-anywhere">
         「蒸氣如鬼魂般在晨光中升起。黑暗、沉重，帶著只有烘焙師知道的秘密。有人將要坦白。」
       </p>
 
-      <div class="pt-8 flex flex-col sm:flex-row gap-4">
-        <a href="#products" class="bg-blood-red hover:bg-red-900 text-white font-headline text-xl px-10 py-4 transition-all uppercase tracking-widest shadow-lg flex items-center justify-center gap-2">
-          <span>審問烘焙</span>
-          <span class="material-symbols-outlined">arrow_forward</span>
+      <div class="pt-8 flex flex-col sm:flex-row gap-4 w-full">
+        <a href="#products" class="bg-blood-red hover:bg-red-900 text-white font-headline text-lg sm:text-xl px-6 sm:px-10 py-4 transition-all uppercase tracking-wide sm:tracking-widest shadow-lg flex items-center justify-center gap-2 whitespace-normal break-words min-h-[3.5rem]">
+          <span class="break-words">審問烘焙</span>
+          <span class="material-symbols-outlined flex-shrink-0">arrow_forward</span>
         </a>
-        <a href="#story" class="border border-gray-700 hover:border-clue-amber text-gray-400 hover:text-clue-amber px-10 py-4 font-headline text-xl transition-all uppercase tracking-widest flex items-center justify-center gap-2">
-          <span>檢視證據</span>
+        <a href="#story" class="border border-gray-700 hover:border-clue-amber text-gray-400 hover:text-clue-amber px-6 sm:px-10 py-4 font-headline text-lg sm:text-xl transition-all uppercase tracking-wide sm:tracking-widest flex items-center justify-center gap-2 whitespace-normal break-words min-h-[3.5rem]">
+          <span class="break-words">檢視證據</span>
         </a>
       </div>
     </div>
