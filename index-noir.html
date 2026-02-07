@@ -73,10 +73,10 @@
 
 <!-- Top Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-noir-black/90 backdrop-blur-md border-b border-white/5" id="nav">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="#hero" class="flex items-center gap-3 group cursor-pointer">
-      <span class="material-symbols-outlined text-blood-red text-3xl">fingerprint</span>
-      <span class="font-headline text-2xl tracking-widest text-white">咖啡小劇場</span>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+    <a href="#hero" class="flex items-center gap-2 group cursor-pointer flex-shrink-0">
+      <span class="material-symbols-outlined text-blood-red text-2xl sm:text-3xl">fingerprint</span>
+      <span class="font-headline text-lg sm:text-2xl tracking-wider sm:tracking-widest text-white">咖啡小劇場</span>
     </a>
 
     <div class="hidden md:flex items-center gap-8 font-headline text-lg tracking-wider text-gray-500">
@@ -86,16 +86,16 @@
       <a class="hover:text-blood-red transition-colors" href="#faq">案件檔案</a>
     </div>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
       <!-- 版型切換按鈕 -->
-      <a href="index.html" class="flex items-center gap-2 px-3 py-1 border border-clue-amber/30 rounded hover:bg-clue-amber/10 transition-colors text-clue-amber text-xs font-bold tracking-widest">
+      <a href="index.html" class="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 border border-clue-amber/30 rounded hover:bg-clue-amber/10 transition-colors text-clue-amber text-xs font-bold tracking-wider sm:tracking-widest">
         <span class="material-symbols-outlined text-sm">wb_sunny</span>
         <span class="hidden sm:inline">明亮版</span>
       </a>
 
-      <button class="flex items-center gap-2 group" id="navCart">
-        <span class="font-headline text-lg text-white">案件記錄 (<span id="cartCount">0</span>)</span>
-        <span class="material-symbols-outlined text-blood-red">folder_open</span>
+      <button class="flex items-center gap-1 sm:gap-2 group" id="navCart">
+        <span class="font-headline text-sm sm:text-lg text-white whitespace-nowrap">記錄 (<span id="cartCount">0</span>)</span>
+        <span class="material-symbols-outlined text-blood-red text-xl sm:text-2xl">folder_open</span>
       </button>
     </div>
   </div>
@@ -152,7 +152,7 @@
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="flex flex-col md:flex-row items-start justify-between mb-20 gap-8">
       <div class="md:w-1/2">
-        <h2 class="font-headline text-5xl text-white mb-4 uppercase tracking-tighter">犯罪現場: <span class="text-clue-amber">咖啡產地</span></h2>
+        <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl text-white mb-4 uppercase tracking-tight sm:tracking-tighter break-words">犯罪現場: <span class="text-clue-amber">咖啡產地</span></h2>
         <div class="w-20 h-1 bg-blood-red mb-6"></div>
         <p class="text-gray-400 leading-relaxed italic">海拔很高，霧很濃。每顆豆子都是火山土壤和烈日的見證者。我們在海拔 2,000 公尺處找到了真相。</p>
       </div>
@@ -211,26 +211,26 @@
 <section class="py-24 bg-detective-blue" id="order-process">
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="text-center mb-16">
-      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter">調查程序</h2>
+      <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl text-white uppercase tracking-tight sm:tracking-tighter">調查程序</h2>
       <p class="text-gray-400 mt-4 italic">如何帶走你的證據</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
+      <div class="text-center p-6 sm:p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
         <span class="material-symbols-outlined text-clue-amber text-4xl md:text-5xl mb-6 opacity-50">fingerprint</span>
-        <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">選擇嫌疑人</h3>
+        <h3 class="font-headline text-xl sm:text-2xl text-white mb-3 tracking-normal sm:tracking-wider">選擇嫌疑人</h3>
         <p class="text-gray-400 text-sm">從陣容中挑選目標</p>
       </div>
 
-      <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
+      <div class="text-center p-6 sm:p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
         <span class="material-symbols-outlined text-clue-amber text-4xl md:text-5xl mb-6 opacity-50">description</span>
-        <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">填寫報告</h3>
+        <h3 class="font-headline text-xl sm:text-2xl text-white mb-3 tracking-normal sm:tracking-wider">填寫報告</h3>
         <p class="text-gray-400 text-sm">完成案件資料</p>
       </div>
 
-      <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
+      <div class="text-center p-6 sm:p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
         <span class="material-symbols-outlined text-clue-amber text-4xl md:text-5xl mb-6 opacity-50">storefront</span>
-        <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">7-11 取證</h3>
+        <h3 class="font-headline text-xl sm:text-2xl text-white mb-3 tracking-normal sm:tracking-wider">7-11 取證</h3>
         <p class="text-gray-400 text-sm">到現場取得證物</p>
       </div>
     </div>
@@ -241,7 +241,7 @@
 <section class="py-24 bg-noir-black" id="order">
   <div class="container mx-auto px-6 max-w-2xl">
     <div class="text-center mb-12">
-      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter mb-4">建立案件檔案</h2>
+      <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl text-white uppercase tracking-tight sm:tracking-tighter mb-4">建立案件檔案</h2>
       <p class="text-gray-400">請填寫以下資訊完成調查</p>
     </div>
 
@@ -302,7 +302,7 @@
 <section class="py-24 bg-detective-blue" id="faq">
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="text-center mb-16">
-      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter">案件檔案</h2>
+      <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl text-white uppercase tracking-tight sm:tracking-tighter">案件檔案</h2>
       <p class="text-gray-400 mt-4">常見調查問題</p>
     </div>
 
@@ -316,7 +316,7 @@
 <section class="py-24 bg-noir-black" id="testimonials">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="font-headline text-5xl text-white uppercase tracking-tighter">證人證詞</h2>
+      <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl text-white uppercase tracking-tight sm:tracking-tighter">證人證詞</h2>
       <p class="text-clue-amber tracking-[0.4em] text-sm mt-4">真實口供</p>
     </div>
 
@@ -331,7 +331,7 @@
   <div class="container mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-12">
       <div class="text-center md:text-left">
-        <h2 class="font-headline text-5xl mb-2 text-white">最終謝幕</h2>
+        <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl mb-2 text-white">最終謝幕</h2>
         <p class="text-gray-500 italic">訂閱晨間快報。我們只寄送重要消息。</p>
       </div>
     </div>
