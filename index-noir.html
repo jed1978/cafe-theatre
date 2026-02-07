@@ -58,6 +58,14 @@
     body {
       background-color: #0a0a0c;
     }
+    /* Material Icons 修正 - 防止溢出 */
+    .material-symbols-outlined {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+      overflow: hidden;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
   </style>
 </head>
 
@@ -157,21 +165,21 @@
     <div class="grid md:grid-cols-3 gap-8">
       <div class="group relative bg-shadow-grey p-8 border border-white/5 hover:border-clue-amber/30 transition-all">
         <span class="absolute top-4 right-4 text-[10px] text-gray-600 font-bold">檔案: 01-環境</span>
-        <span class="material-symbols-outlined text-clue-amber mb-6 text-4xl opacity-50">landscape</span>
+        <span class="material-symbols-outlined text-clue-amber mb-6 text-3xl md:text-4xl opacity-50">landscape</span>
         <h3 class="font-headline text-2xl text-white mb-4 tracking-wider">高海拔掩護</h3>
         <p class="text-sm text-gray-400 leading-relaxed">豆子在衣索比亞高地的陰影中成長。一個培養複雜柑橘動機的完美藏身處。</p>
       </div>
 
       <div class="group relative bg-shadow-grey p-8 border border-white/5 hover:border-clue-amber/30 transition-all">
         <span class="absolute top-4 right-4 text-[10px] text-gray-600 font-bold">檔案: 02-甄選</span>
-        <span class="material-symbols-outlined text-clue-amber mb-6 text-4xl opacity-50">person_check</span>
+        <span class="material-symbols-outlined text-clue-amber mb-6 text-3xl md:text-4xl opacity-50">person_check</span>
         <h3 class="font-headline text-2xl text-white mb-4 tracking-wider">嫌疑人列表</h3>
         <p class="text-sm text-gray-400 leading-relaxed">我們圍捕了收穫中的前 1%。只有那些能夠承受選拔台高溫的才被留下審問。</p>
       </div>
 
       <div class="group relative bg-shadow-grey p-8 border border-white/5 hover:border-clue-amber/30 transition-all">
         <span class="absolute top-4 right-4 text-[10px] text-gray-600 font-bold">檔案: 03-排練</span>
-        <span class="material-symbols-outlined text-clue-amber mb-6 text-4xl opacity-50">local_fire_department</span>
+        <span class="material-symbols-outlined text-clue-amber mb-6 text-3xl md:text-4xl opacity-50">local_fire_department</span>
         <h3 class="font-headline text-2xl text-white mb-4 tracking-wider">第三級拷問</h3>
         <p class="text-sm text-gray-400 leading-relaxed">我們把它們放進烘焙桶，加大火力。小批次。慢慢折磨。直到豆子終於開裂，吐出油脂。</p>
       </div>
@@ -209,19 +217,19 @@
 
     <div class="grid md:grid-cols-3 gap-8">
       <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
-        <span class="material-symbols-outlined text-clue-amber text-5xl mb-6 opacity-50">fingerprint</span>
+        <span class="material-symbols-outlined text-clue-amber text-4xl md:text-5xl mb-6 opacity-50">fingerprint</span>
         <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">選擇嫌疑人</h3>
         <p class="text-gray-400 text-sm">從陣容中挑選目標</p>
       </div>
 
       <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
-        <span class="material-symbols-outlined text-clue-amber text-5xl mb-6 opacity-50">description</span>
+        <span class="material-symbols-outlined text-clue-amber text-4xl md:text-5xl mb-6 opacity-50">description</span>
         <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">填寫報告</h3>
         <p class="text-gray-400 text-sm">完成案件資料</p>
       </div>
 
       <div class="text-center p-8 bg-shadow-grey border border-white/10 hover:border-clue-amber/30 transition-colors">
-        <span class="material-symbols-outlined text-clue-amber text-5xl mb-6 opacity-50">storefront</span>
+        <span class="material-symbols-outlined text-clue-amber text-4xl md:text-5xl mb-6 opacity-50">storefront</span>
         <h3 class="font-headline text-2xl text-white mb-3 tracking-wider">7-11 取證</h3>
         <p class="text-gray-400 text-sm">到現場取得證物</p>
       </div>
