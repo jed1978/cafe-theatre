@@ -86,7 +86,7 @@
 </nav>
 
 <!-- Hero Section (The Opening) -->
-<section class="relative min-h-screen w-full flex items-center justify-center bg-background-dark overflow-x-hidden pt-20 py-12" id="hero">
+<section class="relative h-screen w-full flex items-center justify-center bg-background-dark pt-20" id="hero" style="min-height: 100vh; min-height: 100dvh;">
   <!-- Abstract Spotlight Background -->
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-background-dark to-background-dark opacity-60 pointer-events-none"></div>
 
@@ -94,30 +94,30 @@
   <div class="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none"></div>
   <div class="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none"></div>
 
-  <div class="relative z-20 container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center w-full">
-    <div class="text-white space-y-6 sm:space-y-8 text-center md:text-left w-full overflow-visible">
-      <div class="inline-flex items-center gap-2 border border-white/20 px-3 py-1 rounded-full text-xs uppercase tracking-wide sm:tracking-widest text-primary/80 break-words">
+  <div class="relative z-20 container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full max-w-7xl">
+    <div class="text-white space-y-4 sm:space-y-6 text-center md:text-left w-full">
+      <div class="inline-flex items-center gap-2 border border-white/20 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-normal sm:tracking-wide text-primary/80">
         <span class="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0"></span>
-        <span class="break-words">Now Showing</span>
+        <span>Now Showing</span>
       </div>
 
-      <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-none break-words">
+      <h1 class="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-none" style="word-break: break-word; overflow-wrap: anywhere;">
         咖啡<br/>
         <span class="text-primary italic">小劇場</span>
       </h1>
 
-      <p class="text-gray-400 text-base sm:text-lg md:text-xl max-w-md font-light leading-relaxed mx-auto md:mx-0 break-words overflow-wrap-anywhere">
+      <p class="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-full md:max-w-md font-light leading-relaxed mx-auto md:mx-0" style="word-break: break-word; overflow-wrap: anywhere; hyphens: auto;">
         每一杯，都是一場獨白。在這個快節奏的時代，讓咖啡成為你生活中的主角。
       </p>
 
-      <div class="pt-4 flex flex-col md:flex-row gap-4 justify-center md:justify-start w-full">
-        <a href="#products" class="bg-primary hover:bg-primary-dark text-white px-6 sm:px-8 py-4 rounded-lg font-bold tracking-normal sm:tracking-wide transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 whitespace-normal break-words min-h-[3.5rem]">
-          <span class="break-words">探索劇目</span>
+      <div class="pt-4 flex flex-col md:flex-row gap-3 sm:gap-4 justify-center md:justify-start w-full">
+        <a href="#products" class="bg-primary hover:bg-primary-dark text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg font-bold tracking-normal sm:tracking-wide transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/30 flex items-center justify-center gap-2" style="word-break: keep-all; min-height: 3rem;">
+          <span>探索劇目</span>
           <span class="material-symbols-outlined text-sm flex-shrink-0">arrow_forward</span>
         </a>
-        <a href="#story" class="px-6 sm:px-8 py-4 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2 whitespace-normal break-words min-h-[3.5rem]">
-          <span class="material-symbols-outlined flex-shrink-0">info</span>
-          <span class="break-words">品牌故事</span>
+        <a href="#story" class="px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2" style="word-break: keep-all; min-height: 3rem;">
+          <span class="material-symbols-outlined flex-shrink-0 text-sm">info</span>
+          <span>品牌故事</span>
         </a>
       </div>
     </div>
