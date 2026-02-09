@@ -102,13 +102,13 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="relative h-screen w-full flex items-center justify-center bg-noir-black pt-16" id="hero" style="min-height: 100vh; min-height: 100dvh;">
+<section class="relative min-h-screen w-full flex items-center justify-center bg-noir-black pt-16 overflow-hidden" id="hero" style="min-height: 100vh; min-height: 100dvh;">
   <div class="absolute inset-0 film-grain opacity-20 z-10 pointer-events-none"></div>
   <div class="absolute inset-0 vignette-overlay z-20 pointer-events-none"></div>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] spotlight rounded-full opacity-50 pointer-events-none"></div>
 
   <div class="relative z-30 container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full max-w-7xl">
-    <div class="space-y-4 sm:space-y-6 w-full">
+    <div class="space-y-4 sm:space-y-6 w-full min-w-0">
       <div class="inline-block bg-blood-red/20 border border-blood-red px-2 sm:px-3 py-1 text-[10px] sm:text-xs uppercase tracking-wide sm:tracking-[0.2em] text-blood-red font-bold">
         機密：檔案 #8821
       </div>
@@ -133,10 +133,10 @@
       </div>
     </div>
 
-    <div class="relative group flex justify-center">
+    <div class="relative group hidden md:flex justify-center min-w-0">
       <div class="absolute inset-0 bg-clue-amber/5 blur-[120px] rounded-full"></div>
       <div class="relative">
-        <img alt="咖啡小劇場精品咖啡豆" class="max-w-md grayscale contrast-125 brightness-75 drop-shadow-[0_35px_35px_rgba(0,0,0,0.8)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsVEKDHwQytPx8XmZkTaI1lrw60djqujaPWMf63r2fzgKqPNRbBhnogrXKIVV0mB545PUpOcw5HAiib9f6d_hi6RrH4sssGpZqE91Nbl4LiC6SrPTohiukBLmW_wJPiS8deHV4GoHqmYUE3d-iap_BtRrqLMjSEZUODBtNwDf6vE0u3lLYGCAgLN4cdOVGTOt56jOWGl7PIBiJj43SzD7uODbS75XFbiTwDSi0dkU-_sZTnSEqN-THRemZsiNySL3Efhn0Oda7r9o-"/>
+        <img alt="咖啡小劇場精品咖啡豆" class="w-full max-w-md grayscale contrast-125 brightness-75 drop-shadow-[0_35px_35px_rgba(0,0,0,0.8)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsVEKDHwQytPx8XmZkTaI1lrw60djqujaPWMf63r2fzgKqPNRbBhnogrXKIVV0mB545PUpOcw5HAiib9f6d_hi6RrH4sssGpZqE91Nbl4LiC6SrPTohiukBLmW_wJPiS8deHV4GoHqmYUE3d-iap_BtRrqLMjSEZUODBtNwDf6vE0u3lLYGCAgLN4cdOVGTOt56jOWGl7PIBiJj43SzD7uODbS75XFbiTwDSi0dkU-_sZTnSEqN-THRemZsiNySL3Efhn0Oda7r9o-"/>
         <div class="absolute bottom-4 -left-4 bg-white p-2 shadow-lg -rotate-3 border-2 border-gray-300">
           <div class="bg-gray-100 p-4 text-noir-black text-xs font-bold border-b border-gray-300 mb-2">證據標籤</div>
           <p class="text-[10px] text-noir-black leading-none">ID: 物證 A</p>
